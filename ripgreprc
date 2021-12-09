@@ -1,0 +1,28 @@
+# Use ag / bash colors
+--colors
+match:bg:yellow
+
+--colors
+match:fg:black
+
+--colors
+match:style:nobold
+
+--colors
+path:fg:green
+
+--colors
+path:style:bold
+
+--colors
+line:fg:yellow
+
+--colors
+line:style:bold
+
+# case sensitive only if pattern contains upcase letter
+--smart-case
+
+# add my 'test' type.
+--type-add
+test:*{_,.}{test}.*

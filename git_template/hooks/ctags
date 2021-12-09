@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+PATH="/usr/local/bin:$PATH"
+repo=`basename $(git config remote.origin.url | sed "s/\.git$//") 2> /dev/null`
+dir="/tmp/git-ctags/$repo"
+
+mkdir -p $dir
+trap 'rm -f "$dir/$$.tags"' EXIT
+
+generate_tags() {
+  ctags --tag-relative=no -L - -f"$dir/$$.tags" --languages=-javascript,sql > /dev/null 2>&1
+}
+
+list_target_files() {
+  git ls-files
+}
+
+kill_running_ctags() {
+  processes_to_kill=$({ ps aux | grep "ctags" | grep "$dir" | grep -v grep | awk '{ print $2; }' | xargs; } || echo "")
+  if [[ ! -z "$processes_to_kill" ]] ; then
+    kill $processes_to_kill
+  fi
+}
+
+main() {
+  kill_running_ctags
+  list_target_files | generate_tags
+  mv "$dir/$$.tags" tags
+}
+
+main

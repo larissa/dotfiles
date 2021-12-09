@@ -1,0 +1,12 @@
+# personal dev files
+*.patch
+
+# rvm files
+.ruby-version
+.ruby-gemset
+
+# vim service files
+*.swp
+*.swo
+tags
+.tags
