@@ -18,7 +18,7 @@ ln -s -f $cwd/git_template ~/.git_template
 ln -s -f $cwd/ripgreprc ~/.ripgreprc
 ln -s -f $cwd/tigrc ~/.tigrc
 
-git clone --depth 1 git://github.com/larissa/vim-configs.git ~/.vim
+git clone --depth 1 https://github.com/larissa/vim-configs.git ~/.vim
 cd ~/.vim
 ./install.sh
 cd $cwd
