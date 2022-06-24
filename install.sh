@@ -22,4 +22,7 @@ fi
 git clone --depth 1 https://github.com/larissa/vim-configs.git ~/.vim
 cd ~/.vim
 ./install.sh
+if [ $SPIN ]; then
+  echo "let g:ruby_host_prog = '"`gem environment | awk '/EXECUTABLE DIRECTORY/ {print $4}'`"'" >> vimrc
+fi
 cd $cwd
