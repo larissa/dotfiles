@@ -2,13 +2,9 @@
 
 cwd=$(pwd)
 
-if [ SPIN ]; then
-  sudo apt purge neovim -y
-  sudo add-apt-repository -y ppa:neovim-ppa/stable
-  sudo apt update
+if ! [ $SPIN ]; then
+  sudo apt-get install -y ripgrep httpie rsync tig jq
 fi
-
-sudo apt-get install -y ripgrep httpie rsync tig jq
 
 cat zshrc >> ~/.zshrc
 cat gitconfig >> ~/.gitconfig
@@ -19,7 +15,7 @@ ln -s -f $cwd/ripgreprc ~/.ripgreprc
 ln -s -f $cwd/tigrc ~/.tigrc
 ln -s -f $cwd/tmux.conf ~/.tmux.conf
 
-if [ SPIN ]; then
+if [ $SPIN ]; then
   sed -i '/fish\|kitty\|smxx/d' tmux.conf
 fi
 
