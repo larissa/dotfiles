@@ -3,7 +3,7 @@
 cwd=$(pwd)
 
 if ! [ $SPIN ]; then
-  sudo apt-get install -y ripgrep httpie rsync tig jq
+  sudo apt-get install -y neovim ripgrep httpie rsync tig jq
 fi
 
 cat zshrc >> ~/.zshrc
