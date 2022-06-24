@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# debug
+exit 0
+
 cwd=$(pwd)
 
 if [ SPIN ]; then
