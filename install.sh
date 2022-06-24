@@ -1,12 +1,9 @@
 #!/usr/bin/env sh
 
-# debug
-exit 0
-
 cwd=$(pwd)
 
 if [ SPIN ]; then
-  sudo apt purge neovim
+  sudo apt purge neovim -y
   sudo add-apt-repository -y ppa:neovim-ppa/stable
   sudo apt update
 fi
