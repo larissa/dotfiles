@@ -32,5 +32,4 @@ if [ -s ~/.config/fish/functions ]; then
   rm -fr  ~/.config/fish/functions
 fi
 ln -s -f $cwd/fish/functions ~/.config/fish/functions
-fish -c fish_greeting
-./install.fish
+# ./install.fish
