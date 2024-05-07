@@ -17,8 +17,8 @@ ln -s -f $cwd/tigrc ~/.tigrc
 ln -s -f $cwd/tmux.conf ~/.tmux.conf
 
 # vim install
-git clone --depth 1 https://github.com/larissa/vim-configs.git ~/.vim
-cd ~/.vim
+git clone --depth 1 https://github.com/larissa/vim-configs.git ~/.nvim
+cd ~/.nvim
 ./install.sh
 cd $cwd
 
