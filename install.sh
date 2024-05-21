@@ -8,6 +8,7 @@ fi
 
 # configurations
 cat zshrc >> ~/.zshrc
+cat p10k.zsh >> ~/.p10k.zsh
 cat gitconfig >> ~/.gitconfig
 cat gitignore >> ~/.gitignore
 
