@@ -79,5 +79,11 @@ export FZF_DEFAULT_OPTS='--tiebreak=end,length,index'
 
 export EDITOR='nvim'
 
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
+
 # Shell integrations
 eval "$(fzf --zsh)"
