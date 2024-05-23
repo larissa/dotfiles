@@ -25,4 +25,4 @@ line:style:bold
 
 # add my 'test' type.
 --type-add
-test:*{_,.}{test}.*
+test:*{_,.}{test,spec}.*
