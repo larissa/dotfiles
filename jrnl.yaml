@@ -1,0 +1,22 @@
+colors:
+  body: none
+  date: cyan
+  tags: yellow
+  title: green
+default_hour: 9
+default_minute: 0
+editor: nvim
+encrypt: false
+highlight: true
+indent_character: '|'
+journals:
+  default:
+    journal: ~/.journal/journal.txt
+  work:
+    journal: ~/.journal/work.txt
+    encrypt: true
+linewrap: 82
+tagsymbols: '#@'
+template: false
+timeformat: '%F %r'
+version: v4.1
