@@ -1,0 +1,21 @@
+# Open file on GitHub with browser
+git_open() {
+  local browser_command="sensible-browser"
+  if [[ "$(uname -s)" == "Darwin" ]]; then
+    browser_command="open"
+  fi
+
+  local host="https://github.com/"
+  local branch="blob/main/"
+  local filepath="$1"
+  local linenumber="$2"
+
+  if [[ "$filepath" =~ github\.com/([^/]*/[^/]*/)(.*) ]]; then
+    local repo="${match[1]}"
+    local file="${match[2]}"
+    "$browser_command" "${host}${repo}${branch}${file}#L${linenumber}"
+  else
+    echo "Error: filepath does not match expected github pattern." >&2
+    return 1
+  fi
+}

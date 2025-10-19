@@ -8,10 +8,12 @@ fi
 
 # configurations
 cat zshrc >> ~/.zshrc
+cat zprofile >> ~/.zprofile
 cat p10k.zsh >> ~/.p10k.zsh
 cat gitconfig >> ~/.gitconfig
 cat gitignore >> ~/.gitignore
 
+ln -s -f $cwd/zfunctions ~/.zfunctions
 ln -s -f $cwd/git_template ~/.git_template
 ln -s -f $cwd/ripgreprc ~/.ripgreprc
 ln -s -f $cwd/tigrc ~/.tigrc

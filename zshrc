@@ -42,6 +42,10 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# custom functions
+fpath=(~/.zfunctions $fpath);
+autoload -U $fpath[1]/*(.:t)
+
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
