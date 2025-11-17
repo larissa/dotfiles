@@ -85,8 +85,12 @@ export EDITOR='nvim'
 _fix_cursor() {
    echo -ne '\e[5 q'
 }
+_set_directory_as_title() {
+  print -Pn "\e]0;%~\a"
+}
 
 precmd_functions+=(_fix_cursor)
+precmd_functions+=(_set_directory_as_title)
 
 # Shell integrations
 eval "$(fzf --zsh)"
